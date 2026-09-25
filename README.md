@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+# 🧮 Calculadora de IMC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em **React + TypeScript** para calcular o Índice de Massa Corporal (IMC) a partir da altura e do peso informados pelo usuário.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- TypeScript
+- Vite
+- CSS
+- Git e GitHub
 
-## React Compiler
+## 📋 Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Inserção da altura em metros
+- Inserção do peso em quilogramas
+- Cálculo automático do IMC
+- Exibição do resultado com duas casas decimais
+- Classificação do IMC
+- Validação dos campos
+- Interface responsiva e estilizada
 
-## Expanding the ESLint configuration
+## 📊 Classificação do IMC
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| IMC | Classificação |
+|---|---|
+| Abaixo de 18,5 | Abaixo do peso |
+| 18,5 até 24,9 | Peso normal |
+| 25,0 até 29,9 | Sobrepeso |
+| 30,0 até 34,9 | Obesidade grau I |
+| 35,0 até 39,9 | Obesidade grau II |
+| 40,0 ou mais | Obesidade grau III |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧮 Fórmula utilizada
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O cálculo é realizado através da fórmula:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+```text
+IMC = peso / (altura × altura)
